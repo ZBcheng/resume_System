@@ -77,42 +77,46 @@ public class User {
             // 打开链接
             System.out.println("连接数据库...");
             conn = DriverManager.getConnection(DB_URL,USER,PASS);
-            System.out.print("done!");
             // 执行查询
-            System.out.println(" 实例化Statement对象...");
             stmt = conn.createStatement();
             String sql;
-            sql = "SELECT * FROM User WHERE name = #{username} ";
+            sql = "SELECT * FROM User WHERE name = " + "'" +username + "'";
+            System.out.println(sql);
             ResultSet rs = stmt.executeQuery(sql);
 
             // 展开结果集数据库
             while(rs.next()){
                 // 通过字段检索
-                int id  = rs.getInt("id");
-                String name = rs.getString("name");
-                String password = rs.getString("password");
-                int age = rs.getInt("age");
-                String birthday = rs.getString("birthday");
-                String gender = rs.getString("gender");
-                String phone = rs.getString("phone");
-                String email = rs.getString("email");
-                String city = rs.getString("city");
-                String desc = rs.getString("des");
-                String school = rs.getString("school");
-                String major = rs.getString("major");
-                String skill = rs.getString("skill");
-                String prize = rs.getString("prize");
-                String image = rs.getString("image");
-                String homepage = rs.getString("homepage");
+
+                int id  = rs.getInt(1);
+                String name = rs.getString(2);
+                String password = rs.getString(3);
+                int age = rs.getInt(4);
+                String birthday = rs.getString(5);
+                String gender = rs.getString(6);
+                String phone = rs.getString(7);
+                String email = rs.getString(8);
+                String city = rs.getString(9);
+                String desc = rs.getString(10);
+                String school = rs.getString(11);
+                String major = rs.getString(12);
+                String skill = rs.getString(13);
+                String prize = rs.getString(14);
+                String image = rs.getString(15);
+                String homepage = rs.getString(16);
 
                 // 输出数据
                 System.out.print(id + name + password + age + birthday + gender + phone + email + city + desc + school + major + skill + prize + image + homepage);
                 System.out.print("\n");
+
+
             }
-            // 完成后关闭
+
             rs.close();
             stmt.close();
             conn.close();
+            // 完成后关闭
+
         }catch(SQLException se){
             // 处理 JDBC 错误
             se.printStackTrace();
@@ -174,7 +178,6 @@ public class User {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-            System.out.println("heh");
             // 展开结果集数据库
 
         }catch(SQLException se){
@@ -209,7 +212,7 @@ public class User {
     public static void main(String[] args) {
         User user = new User(1, "张毕成", "980110", 21, "980316", "male", "Bee0_0@icloud.com", "Bee0_0@icloud.com", "Xi'an", "hello", "Xi'an Shiyou University", "CS", "no", "no", "no", "zbcheng.github.io");
         user.setInfo();
-//        user.select("张毕成");
+        user.select("张毕成");
     }
 
 }
