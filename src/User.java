@@ -211,8 +211,11 @@ public class User {
 
     public static void main(String[] args) {
         User user = new User(1, "张毕成", "980110", 21, "980316", "male", "Bee0_0@icloud.com", "Bee0_0@icloud.com", "Xi'an", "hello", "Xi'an Shiyou University", "CS", "no", "no", "no", "zbcheng.github.io");
+        User user2 = new User(2, "zbc", "980110", 21, "980316", "male", "Bee0_0@icloud.com", "Bee0_0@icloud.com", "Xi'an", "hello", "Xi'an Shiyou University", "CS", "no", "no", "no", "zbcheng.github.io");
         user.setInfo();
+        user2.setInfo();
         user.select("张毕成");
+        user2.select("zbc");
     }
 
 }

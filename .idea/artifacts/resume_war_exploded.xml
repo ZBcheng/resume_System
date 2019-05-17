@@ -7,6 +7,10 @@
         <element id="directory" name="classes">
           <element id="module-output" name="resume" />
         </element>
+        <element id="directory" name="lib">
+          <element id="file-copy" path="$PROJECT_DIR$/../mysql-connector-java-5.1.47/mysql-connector-java-5.1.47-bin.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/mysql-connector-java-5.1.47/mysql-connector-java-5.1.47-bin.jar" />
+        </element>
       </element>
     </root>
   </artifact>
