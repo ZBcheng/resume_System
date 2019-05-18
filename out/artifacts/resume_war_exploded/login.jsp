@@ -7,26 +7,26 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>用户登录</title>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>登录</title>
 
-    <!-- CSS  -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="static/css/materialize.css" type="text/css" rel="stylesheet" />
-    <link href="static/css/style.css" type="text/css" rel="stylesheet" />
-</head>
-<body background="static/image/login.jpg">
-
-    <div class="login-card" style="width: 600px; height: 400px; margin: auto; margin-top: 200px; background: white">
-        <div class="card">
+        <!-- CSS  -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="static/css/materialize.css" type="text/css" rel="stylesheet" />
+        <link href="static/css/style.css" type="text/css" rel="stylesheet" />
+    </head>
 
 
-            <h2 style="padding-left: 55px; padding-top: 55px">登录</h2>
-            <div class="row">
-                <form class="col s12" id="log_form" action="" method="post">
+    <body background="static/image/login.jpg">
+
+        <div class="login-card" style="width: 600px; height: 400px; margin: auto; margin-top: 200px; background: white">
+            <div class="card">
+                <h2 style="padding-left: 55px; padding-top: 55px">登录</h2>
+                <div class="row">
+                    <form class="col s12" id="log_form" action="" method="post">
                     <div class="row" style="margin-left: 50px;">
                         <div class="row" style="margin-top: 10px">
                             <div class="input-field col s10">
@@ -63,20 +63,16 @@
                         <script src="static/js/login.js"></script>
                     </div>
                 </form>
+                </div>
             </div>
-
         </div>
 
-    </div>
-    </div>
 
-    <!--  Scripts-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="static/js/materialize.js"></script>
-    <script src="static/js/init.js"></script>
+        <!--  Scripts-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="static/js/materialize.js"></script>
+        <script src="static/js/init.js"></script>
 
-</body>
-
-
+    </body>
 </html>

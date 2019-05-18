@@ -18,16 +18,17 @@
   <link href="static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="static/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
-  <body>
+
+<body>
   <nav class="white" role="navigation">
     <div class="nav-wrapper container">
-      <a id="logo-container" class="brand-logo">图书管理</a>
+      <a id="logo-container" class="brand-logo">简历信息管理</a>
       <ul class="right hide-on-med-and-down">
 
         <script src="static/js/sidenav.js"></script>
-        <li><a href="<%=request.getContextPath() %>/login.jsp">登录</a></li>
-        <li><a href="/register/">注册</a></li>
-        <li><a href="/adminlogin/">书店管理</a></li>
+        <li><a href="<%=request.getContextPath()%>/login.jsp">登录</a></li>
+        <li><a href="<%=request.getContextPath()%>/register.jsp">注册</a></li>
+        <li><a href="/adminlogin/">管理</a></li>
       </ul>
 
       <ul id="slide-out" class="sidenav">
