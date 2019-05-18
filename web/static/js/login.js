@@ -1,10 +1,9 @@
 function login() {
     var elem = document.getElementById('modal1')
-    var instances = M.Modal.init(elem)
     var username = document.getElementById("username").value
     var password = document.getElementById("password").value
-    console.log(username)
-    console.log(password)
+    alert(username)
+    alert(password)
     if(username == "") {
         var elem = document.getElementById('modal1')
         var instances = M.Modal.init(elem)

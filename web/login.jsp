@@ -26,43 +26,41 @@
             <div class="card">
                 <h2 style="padding-left: 55px; padding-top: 55px">登录</h2>
                 <div class="row">
-                    <form class="col s12" id="log_form" action="" method="post">
-                    <div class="row" style="margin-left: 50px;">
-                        <div class="row" style="margin-top: 10px">
-                            <div class="input-field col s10">
-                                <i class="material-icons prefix">account_circle</i>
-                                <input id="username" type="text" class="validate" name="username">
-                                <label for="username">用户名</label>
+                    <form class="col s12" id="log_form" action="${pageContext.request.contextPath}\login" method="post">
+                        <div class="row" style="margin-left: 50px;">
+                            <div class="row" style="margin-top: 10px">
+                                <div class="input-field col s10">
+                                    <i class="material-icons prefix">account_circle</i>
+                                    <input id="username" type="text" class="validate" name="username">
+                                    <label for="username">用户名</label>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="row" style="margin-top: 10px">
-                            <div class="input-field col s10" name="password">
+                            <div class="row" style="margin-top: 10px">
+                                <div class="input-field col s10" name="password">
                                 <i class="material-icons prefix">lock</i>
                                 <input id="password" type="password" class="validate" name="password">
                                 <label for="password">密码</label>
                             </div>
-                        </div>
-                        <div class="row" style="margin-top: 30px;">
-
-                            <a class="waves-effect waves-light btn modal-trigger col s4" href="#modal1" onclick="login()" style="margin-left: 50px">登录</a>
-
-                            <!-- Modal Structure -->
-                            <div id="modal1" class="modal" style="margin-top: 130px">
-                                <div class="modal-content">
-                                    <h4>信息错误</h4>
-                                    <p>请输入用户名</p>
-                                </div>
-                                <div class="modal-footer" style="padding-right: 25px">
-                                    <a href="#!" class="modal-close waves-effect waves-light btn">确定</a>
-                                </div>
                             </div>
+                            <div class="row" style="margin-top: 30px;">
+                                <a class="waves-effect waves-light btn modal-trigger col s4" href="#modal1" onclick="login()" style="margin-left: 50px">登录</a>
+                                <!-- Modal Structure -->
+                                <div id="modal1" class="modal" style="margin-top: 130px">
+                                    <div class="modal-content">
+                                        <h4>信息错误</h4>
+                                        <p>请输入用户名</p>
+                                    </div>
+                                    <div class="modal-footer" style="padding-right: 25px">
+                                        <a href="#!" class="modal-close waves-effect waves-light btn">确定</a>
+                                    </div>
+                                </div>
 
                             <a class="waves-effect waves-light btn col s4" style="margin-left: 30px" href="<%=request.getContextPath()%>/index.jsp">返回</a>
                         </div>
-                        <script src="static/js/login.js"></script>
+                            <script src="static/js/login.js"></script>
                     </div>
-                </form>
+                    </form>
                 </div>
             </div>
         </div>
