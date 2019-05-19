@@ -17,7 +17,6 @@ function getFrameWorks() {
 
 function info_submit() {
 
-
     var name = document.getElementById("name").value
     var gender = document.getElementById("gender").value
     var phone = document.getElementById("phone").value
@@ -33,24 +32,27 @@ function info_submit() {
     var introduce = document.getElementById("introduce").value
     var others = document.getElementById("others").value
 
-    alert(name)
-    alert(gender)
-    alert(phone)
-    alert(email)
-    alert(birthday)
-    alert(city)
-    alert(website)
-    alert(school)
-    alert(major)
-    alert(language)
-    alert(frameworks)
-    alert(award)
-    alert(introduce)
-    alert(others)
+    // alert(name)
+    // alert(gender)
+    // alert(phone)
+    // alert(email)
+    // alert(birthday)
+    // alert(city)
+    // alert(website)
+    // alert(school)
+    // alert(major)
+    // alert(language)
+    // alert(frameworks)
+    // alert(award)
+    // alert(introduce)
+    // alert(others)
 
-    if (store_name == "") {
-        // var elem = document.getElementById('modal1')
-        // var instances = M.Modal.init(elem)
+    if (name == "" || gender == "" || phone == "" || email == ""|| birthday == ""|| city == ""|| website == ""|| school == ""|| major == ""|| language == ""|| frameworks == ""|| award == ""|| introduce == ""|| others== "") {
+        // if(name == "") {
+
+        var elem = document.getElementById('modal1')
+        var instances = M.Modal.init(elem)
+        instances.open()
     } else {
         document.getElementById("info_form").submit()
     }

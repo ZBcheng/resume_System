@@ -21,7 +21,7 @@
 </head>
 
 <body>
-    <form id="logout_form" action="${pageContext.request.contextPath}\login" method="get">
+    <form class="col s12" id="logout_form" action="${pageContext.request.contextPath}\login" method="get">
     </form>
     <nav class="white" role="navigation">
             <div class="nav-wrapper container">

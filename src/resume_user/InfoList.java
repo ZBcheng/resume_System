@@ -1,6 +1,6 @@
 package resume_user;
 
-public class InfoLlist {
+public class InfoList {
     public PersonalInfo personal_info;
     public EduInfo edu_info;
     public SkillInfo skill_info;
