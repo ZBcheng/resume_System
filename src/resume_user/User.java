@@ -1,7 +1,7 @@
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.*;
+package resume_user;
+
+import java.sql.Connection;
+import java.sql.Statement;
 
 public class User {
     public static User cur_user;
@@ -38,7 +38,7 @@ public class User {
         User.cur_user = cur_user;
     }
 
-    public static User getCurUser(User cur_user) {
+    public static User getCurUser() {
         return User.cur_user;
     }
 

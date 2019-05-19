@@ -1,3 +1,5 @@
+package resume_user;
+
 import java.io.IOException;
 import java.sql.*;
 import javax.servlet.http.HttpServlet;
@@ -140,9 +142,14 @@ public class LoginServlet extends HttpServlet {
     }
 
     public void logout() {
-        String user_name = User.cur_user.getUsername();
-        User.cur_user = null;
-        System.out.println("用户:" + user_name + "已退出");
+        try {
+            String user_name = User.cur_user.getUsername();
+            User.cur_user = null;
+            System.out.println("用户:" + user_name + "已退出");
+        } catch (java.lang.NullPointerException e) {
+            System.out.println("没有用户登录");
+        }
+
     }
 
 
@@ -165,6 +172,8 @@ public class LoginServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        this.logout();
+        response.sendRedirect("index.jsp");
     }
 
     public static void main(String[] args) {

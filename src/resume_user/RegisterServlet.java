@@ -1,4 +1,6 @@
-import com.mysql.jdbc.log.Log;
+package resume_user;
+
+import resume_user.LoginServlet;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;

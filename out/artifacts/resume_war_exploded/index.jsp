@@ -36,12 +36,12 @@
     <div class="section no-pad-bot">
       <div class="container">
         <br><br>
-        <h1 class="header center teal-text text-lighten-2">Parallax Template</h1>
+        <h1 class="header center teal-text text-lighten-2">简历信息系统</h1>
         <div class="row center">
-          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+          <h5 class="header col s12 light">在这里，用一份简历开始你的故事</h5>
         </div>
         <div class="row center">
-          <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Get Started</a>
+          <a href="<%=request.getContextPath()%>/login.jsp" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">登录</a>
         </div>
         <br><br>
 
@@ -68,9 +68,9 @@
         <div class="col s12 m4">
           <div class="icon-block">
             <h2 class="center brown-text"><i class="material-icons">group</i></h2>
-            <h5 class="center">查看我的简历</h5>
+            <h5 class="center">查看简历</h5>
 
-            <p class="light" style="text-align: center">已有简历？点此快速查看</p>
+            <p class="light" style="text-align: center">已有简历？快速查看</p>
           </div>
         </div>
 
@@ -79,7 +79,7 @@
             <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
             <h5 class="center">修改简历</h5>
 
-            <p class="light" style="text-align: center">简历信息不合适？点此修改</p>
+            <p class="light" style="text-align: center">简历信息不合适？在线修改</p>
           </div>
         </div>
       </div>

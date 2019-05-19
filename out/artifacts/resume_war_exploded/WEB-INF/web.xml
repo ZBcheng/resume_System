@@ -5,7 +5,7 @@
          version="4.0">
     <servlet>
         <servlet-name>LoginServlet</servlet-name>
-        <servlet-class>LoginServlet</servlet-class>
+        <servlet-class>resume_user.LoginServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
@@ -14,7 +14,7 @@
 
     <servlet>
         <servlet-name>LogoutServlet</servlet-name>
-        <servlet-class>LogoutServlet</servlet-class>
+        <servlet-class>resume_user.LogoutServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>LogoutServlet</servlet-name>
@@ -23,7 +23,7 @@
 
     <servlet>
         <servlet-name>RegisterServlet</servlet-name>
-        <servlet-class>RegisterServlet</servlet-class>
+        <servlet-class>resume_user.RegisterServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>RegisterServlet</servlet-name>

@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="resume_user.User"%>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -20,50 +21,52 @@
 </head>
 
 <body>
-<nav class="white" role="navigation">
-    <div class="nav-wrapper container">
-        <a id="logo-container" class="brand-logo">简历信息管理</a>
-        <ul class="right hide-on-med-and-down">
-            <script src="static/js/sidenav.js"></script>
-            <li><a onclick="show_sidebar()" href="#slide-out">个人信息</a></li>
-            <li><a href="<%=request.getContextPath()%>/login.jsp">退出登录</a></li>
-        </ul>
+    <form id="logout_form" action="${pageContext.request.contextPath}\login" method="get">
+    </form>
+    <nav class="white" role="navigation">
+            <div class="nav-wrapper container">
+                <a id="logo-container" class="brand-logo">简历信息管理</a>
+                <ul class="right hide-on-med-and-down">
+                    <script src="static/js/sidenav.js"></script>
+                    <li><a onclick="show_sidebar()" href="#slide-out">个人信息</a></li>
+                    <li><a onclick="logout()">退出登录</a></li>
+                    <script src="static/js/logout.js"></script>
+                </ul>
 
-        <ul id="slide-out" class="sidenav">
-            <li><div class="user-view" style="height: 190px">
-                <div class="background">
-                    <img src="static/image/background1.jpg">
-                </div>
-                <a href="#user"><img class="circle" src="static/image/user.jpg"></a>
-                <a href="#name"><span class="white-text name" style="padding-top: 7px;padding-bottom: 20px">{{ request.user.username }}</span></a>
+                <ul id="slide-out" class="sidenav">
+                    <li><div class="user-view" style="height: 190px">
+                        <div class="background">
+                            <img src="static/image/background1.jpg">
+                        </div>
+                        <a href="#user"><img class="circle" src="static/image/user.jpg"></a>
+                        <a href="#name"><span class="white-text name" style="padding-top: 7px;padding-bottom: 20px"><%=User.getCurUser().getUsername()%></span></a>
+                    </div>
+                    </li>
+                    <li><a class="subheader" href="#!"></i>基本信息</a></li>
+                    <li><div class="divider"></div></li>
+                    <li><a class="waves-effect" href="#!"><i class="material-icons">face</i></a></li>
+                    <li><a class="waves-effect" href="#!"><i class="material-icons">phone</i><%=User.getCurUser().getUsername()%></a></li>
+                    <li><a class="waves-effect" href="#!"><i class="material-icons">cake</i>{{ request.user.birthday }}</a></li>
+                    <li><a class="waves-effect" href="#!"><i class="material-icons">email</i>{{ request.user.email }}</a></li>
+                    <li><div class="divider"></div></li>
+                    <li><a class="waves-effect" href="/logout/" style="color: #E53935"><i class="material-icons">info</i>退出登录</a></li>
+
+                    <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                </ul>
             </div>
-            </li>
-            <li><a class="subheader" href="#!"></i>基本信息</a></li>
-            <li><div class="divider"></div></li>
-            <li><a class="waves-effect" href="#!"><i class="material-icons">face</i>{{ request.user.name }}</a></li>
-            <li><a class="waves-effect" href="#!"><i class="material-icons">phone</i>{{ request.user.mobile }}</a></li>
-            <li><a class="waves-effect" href="#!"><i class="material-icons">cake</i>{{ request.user.birthday }}</a></li>
-            <li><a class="waves-effect" href="#!"><i class="material-icons">email</i>{{ request.user.email }}</a></li>
-            <li><div class="divider"></div></li>
-            <li><a class="waves-effect" href="/logout/" style="color: #E53935"><i class="material-icons">info</i>退出登录</a></li>
+        </nav>
 
-            <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-        </ul>
-
-
-    </div>
-</nav>
 
 <div id="index-banner" class="parallax-container">
     <div class="section no-pad-bot">
         <div class="container">
             <br><br>
-            <h1 class="header center teal-text text-lighten-2">Parallax Template</h1>
+            <h1 class="header center teal-text text-lighten-2">简历信息系统</h1>
             <div class="row center">
-                <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+                <h5 class="header col s12 light">在这里，用一份简历开始你的故事</h5>
             </div>
             <div class="row center">
-                <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Get Started</a>
+                <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">开始创建</a>
             </div>
             <br><br>
 
@@ -80,28 +83,28 @@
         <div class="row">
             <div class="col s12 m4">
                 <div class="icon-block">
-                    <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
-                    <h5 class="center">Speeds up development</h5>
+                    <h2 class="center brown-text"><i class="material-icons" >flash_on</i></h2>
+                    <h5 class="center">快速创建模版</h5>
 
-                    <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
+                    <p class="light" style="text-align: center">一键生成，自从排版，轻松编辑</p>
                 </div>
             </div>
 
             <div class="col s12 m4">
                 <div class="icon-block">
                     <h2 class="center brown-text"><i class="material-icons">group</i></h2>
-                    <h5 class="center">User Experience Focused</h5>
+                    <h5 class="center">查看简历</h5>
 
-                    <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
+                    <p class="light" style="text-align: center">已有简历？快速查看</p>
                 </div>
             </div>
 
             <div class="col s12 m4">
                 <div class="icon-block">
                     <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
-                    <h5 class="center">Easy to work with</h5>
+                    <h5 class="center">修改简历</h5>
 
-                    <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
+                    <p class="light" style="text-align: center">简历信息不合适？在线修改</p>
                 </div>
             </div>
         </div>
