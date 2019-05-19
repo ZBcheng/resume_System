@@ -20,41 +20,17 @@
 </head>
 
 <body>
-  <nav class="white" role="navigation">
-    <div class="nav-wrapper container">
-      <a id="logo-container" class="brand-logo">简历信息管理</a>
-      <ul class="right hide-on-med-and-down">
+    <nav class="white" role="navigation">
+        <div class="nav-wrapper container">
+        <a id="logo-container" class="brand-logo">简历信息管理</a>
+        <ul class="right hide-on-med-and-down">
+            <li><a href="<%=request.getContextPath()%>/login.jsp">登录</a></li>
+            <li><a href="<%=request.getContextPath()%>/register.jsp">注册</a></li>
+            <li><a href="/adminlogin/">管理</a></li>
+        </ul>
 
-        <script src="static/js/sidenav.js"></script>
-        <li><a href="<%=request.getContextPath()%>/login.jsp">登录</a></li>
-        <li><a href="<%=request.getContextPath()%>/register.jsp">注册</a></li>
-        <li><a href="/adminlogin/">管理</a></li>
-      </ul>
-
-      <ul id="slide-out" class="sidenav">
-        <li><div class="user-view" style="height: 190px">
-          <div class="background">
-            <img src="static/pic/background1.jpg">
-          </div>
-          <a href="#user"><img class="circle" src="static/image/user.JPG"></a>
-          <a href="#name"><span class="white-text name" style="padding-top: 7px;padding-bottom: 20px">{{ request.user.username }}</span></a>
         </div>
-        </li>
-        <li><div class="divider"></div></li>
-        <li><a class="waves-effect" href="#!"><i class="material-icons">face</i>{{ request.user.name }}</a></li>
-        <li><a class="waves-effect" href="#!"><i class="material-icons">phone</i>{{ request.user.mobile }}</a></li>
-        <li><a class="waves-effect" href="#!"><i class="material-icons">cake</i>{{ request.user.birthday }}</a></li>
-        <li><a class="waves-effect" href="#!"><i class="material-icons">email</i>{{ request.user.email }}</a></li>
-        <li><div class="divider"></div></li>
-        <li><a class="waves-effect" href="/logout/" style="color: #E53935"><i class="material-icons">info</i>退出登录</a></li>
-
-        <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-      </ul>
-
-
-      </ul>
-    </div>
-  </nav>
+    </nav>
 
   <div id="index-banner" class="parallax-container">
     <div class="section no-pad-bot">
@@ -82,28 +58,28 @@
       <div class="row">
         <div class="col s12 m4">
           <div class="icon-block">
-            <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
-            <h5 class="center">Speeds up development</h5>
+            <h2 class="center brown-text"><i class="material-icons" >flash_on</i></h2>
+            <h5 class="center">快速创建模版</h5>
 
-            <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
+            <p class="light" style="text-align: center">一键生成，自从排版，轻松编辑</p>
           </div>
         </div>
 
         <div class="col s12 m4">
           <div class="icon-block">
             <h2 class="center brown-text"><i class="material-icons">group</i></h2>
-            <h5 class="center">User Experience Focused</h5>
+            <h5 class="center">查看我的简历</h5>
 
-            <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
+            <p class="light" style="text-align: center">已有简历？点此快速查看</p>
           </div>
         </div>
 
         <div class="col s12 m4">
           <div class="icon-block">
             <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
-            <h5 class="center">Easy to work with</h5>
+            <h5 class="center">修改简历</h5>
 
-            <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
+            <p class="light" style="text-align: center">简历信息不合适？点此修改</p>
           </div>
         </div>
       </div>

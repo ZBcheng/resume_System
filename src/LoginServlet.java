@@ -95,48 +95,54 @@ public class LoginServlet extends HttpServlet {
     public void login(User user) {
 
         String username = user.getUsername();
+        User.setCurUser(user);
+//        try{
+//            // 注册 JDBC 驱动
+//            Class.forName("com.mysql.jdbc.Driver");
+//            int i = 0;
+//            // 打开链接
+//            System.out.println("正在登录...");
+//            conn = DriverManager.getConnection(DB_URL,USER,PASS);
+//            System.out.print("done!");
+//            // 执行查询
+////            stmt = conn.createStatement();
+//            String sql;
+//            sql = "insert into loginUser values (?)";
+//            PreparedStatement stmt;
+//            try {
+//                stmt = (PreparedStatement) conn.prepareStatement(sql);
+//                stmt.setString(1, username);
+//                stmt.executeUpdate();
+//                stmt.close();
+//                conn.close();
+//            } catch (SQLException e) {
+//                e.printStackTrace();
+//            }
+//            // 展开结果集数据库
+//
+//        }catch(SQLException se){
+//            // 处理 JDBC 错误
+//            se.printStackTrace();
+//        }catch(Exception e){
+//            // 处理 Class.forName 错误
+//            e.printStackTrace();
+//        }finally{
+//            // 关闭资源
+//            try{
+//                if(stmt!=null) stmt.close();
+//            }catch(SQLException se2){ }// 什么都不做
+//            try{
+//                if(conn!=null) conn.close();
+//            }catch(SQLException se){
+//                se.printStackTrace();
+//            }
+//        }
+    }
 
-        try{
-            // 注册 JDBC 驱动
-            Class.forName("com.mysql.jdbc.Driver");
-            int i = 0;
-            // 打开链接
-            System.out.println("正在登录...");
-            conn = DriverManager.getConnection(DB_URL,USER,PASS);
-            System.out.print("done!");
-            // 执行查询
-//            stmt = conn.createStatement();
-            String sql;
-            sql = "insert into loginUser values (?)";
-            PreparedStatement stmt;
-            try {
-                stmt = (PreparedStatement) conn.prepareStatement(sql);
-                stmt.setString(1, username);
-                stmt.executeUpdate();
-                stmt.close();
-                conn.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-            // 展开结果集数据库
-
-        }catch(SQLException se){
-            // 处理 JDBC 错误
-            se.printStackTrace();
-        }catch(Exception e){
-            // 处理 Class.forName 错误
-            e.printStackTrace();
-        }finally{
-            // 关闭资源
-            try{
-                if(stmt!=null) stmt.close();
-            }catch(SQLException se2){ }// 什么都不做
-            try{
-                if(conn!=null) conn.close();
-            }catch(SQLException se){
-                se.printStackTrace();
-            }
-        }
+    public void logout() {
+        String user_name = User.cur_user.getUsername();
+        User.cur_user = null;
+        System.out.println("用户:" + user_name + "已退出");
     }
 
 
@@ -154,31 +160,27 @@ public class LoginServlet extends HttpServlet {
         }else {
             System.out.println("用户不存在");
         }
-        response.sendRedirect("index.jsp");
+        System.out.println(User.cur_user);
+        response.sendRedirect("index_login.jsp");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-        System.out.println(username);
-        System.out.println(password);
-        User user = this.getUser(username, password);
-        System.out.println("用户名:" + user.getUsername());
-        System.out.println("密码:" + user.getPassword());
-        if(user != null) {
-            this.login(user);
-        }else {
-            System.out.println("用户不存在");
-        }
     }
 
     public static void main(String[] args) {
 
+
         LoginServlet sev = new LoginServlet();
-        User user = sev.getUser("张毕成", "980110");
-        System.out.println(user.getUsername());
-        System.out.println(user.getPassword());
-        sev.login(user);
+        try {
+            sev.logout();
+        } catch (java.lang.NullPointerException e) {
+            System.out.println(User.isLogin());
+        }
+
+//        User user = sev.getUser("张毕成", "980110");
+//        System.out.println(user.getUsername());
+//        System.out.println(user.getPassword());
+//        sev.login(user);
 
     }
 
