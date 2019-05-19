@@ -26,12 +26,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
   var noop = function () {},
       isFunction = function (item) {
-    // @see https://crbug.com/568448
-    return typeof item === typeof noop && item.call;
-  },
+        // @see https://crbug.com/568448
+        return typeof item === typeof noop && item.call;
+      },
       isString = function (item) {
-    return typeof item === typeof "";
-  };
+        return typeof item === typeof "";
+      };
 
   var idMatch = /^#[\w-]*$/,
       classMatch = /^\.[\w-]*$/,
@@ -82,12 +82,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     if (isString(selector)) {
       elems = idMatch.test(selector) ?
-      // If an ID use the faster getElementById check
-      doc.getElementById(selector.slice(1)) : htmlMatch.test(selector) ?
-      // If HTML, parse it into real elements
-      parseHTML(selector) :
-      // else use `find`
-      find(selector, context);
+          // If an ID use the faster getElementById check
+          doc.getElementById(selector.slice(1)) : htmlMatch.test(selector) ?
+              // If HTML, parse it into real elements
+              parseHTML(selector) :
+              // else use `find`
+              find(selector, context);
 
       // If function, use as shortcut for DOM ready
     } else if (isFunction(selector)) {
@@ -177,16 +177,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
   function getCompareFunction(selector) {
     return (
-      /* Use browser's `matches` function if string */
-      isString(selector) ? matches :
-      /* Match a cash element */
-      selector.cash ? function (el) {
-        return selector.is(el);
-      } :
-      /* Direct comparison */
-      function (el, selector) {
-        return el === selector;
-      }
+        /* Use browser's `matches` function if string */
+        isString(selector) ? matches :
+            /* Match a cash element */
+            selector.cash ? function (el) {
+                  return selector.is(el);
+                } :
+                /* Direct comparison */
+                function (el, selector) {
+                  return el === selector;
+                }
     );
   }
 
@@ -1495,12 +1495,12 @@ $jscomp.iteratorPrototype = function (e) {
 };$jscomp.array = $jscomp.array || {};$jscomp.iteratorFromArray = function (e, r) {
   $jscomp.initSymbolIterator();e instanceof String && (e += "");var p = 0,
       m = { next: function () {
-      if (p < e.length) {
-        var u = p++;return { value: r(u, e[u]), done: !1 };
-      }m.next = function () {
-        return { done: !0, value: void 0 };
-      };return m.next();
-    } };m[Symbol.iterator] = function () {
+          if (p < e.length) {
+            var u = p++;return { value: r(u, e[u]), done: !1 };
+          }m.next = function () {
+            return { done: !0, value: void 0 };
+          };return m.next();
+        } };m[Symbol.iterator] = function () {
     return m;
   };return m;
 };
@@ -1592,14 +1592,14 @@ $jscomp.polyfill = function (e, r, p, m) {
     });return a.length ? a[0] : d;
   }function K(a, c) {
     switch (J(a, c)) {case "transform":
-        return X(a, c);case "css":
-        return E(a, c);case "attribute":
-        return a.getAttribute(c);}return a[c] || 0;
+      return X(a, c);case "css":
+      return E(a, c);case "attribute":
+      return a.getAttribute(c);}return a[c] || 0;
   }function L(a, c) {
     var d = /^(\*=|\+=|-=)/.exec(a);if (!d) return a;var b = y(a) || 0;c = parseFloat(c);a = parseFloat(a.replace(d[0], ""));switch (d[0][0]) {case "+":
-        return c + a + b;case "-":
-        return c - a + b;case "*":
-        return c * a + b;}
+      return c + a + b;case "-":
+      return c - a + b;case "*":
+      return c * a + b;}
   }function F(a, c) {
     return Math.sqrt(Math.pow(c.x - a.x, 2) + Math.pow(c.y - a.y, 2));
   }function M(a) {
@@ -1608,19 +1608,19 @@ $jscomp.polyfill = function (e, r, p, m) {
     }return c;
   }function N(a) {
     if (a.getTotalLength) return a.getTotalLength();switch (a.tagName.toLowerCase()) {case "circle":
-        return 2 * Math.PI * a.getAttribute("r");case "rect":
-        return 2 * a.getAttribute("width") + 2 * a.getAttribute("height");case "line":
-        return F({ x: a.getAttribute("x1"), y: a.getAttribute("y1") }, { x: a.getAttribute("x2"), y: a.getAttribute("y2") });case "polyline":
-        return M(a);case "polygon":
-        var c = a.points;return M(a) + F(c.getItem(c.numberOfItems - 1), c.getItem(0));}
+      return 2 * Math.PI * a.getAttribute("r");case "rect":
+      return 2 * a.getAttribute("width") + 2 * a.getAttribute("height");case "line":
+      return F({ x: a.getAttribute("x1"), y: a.getAttribute("y1") }, { x: a.getAttribute("x2"), y: a.getAttribute("y2") });case "polyline":
+      return M(a);case "polygon":
+      var c = a.points;return M(a) + F(c.getItem(c.numberOfItems - 1), c.getItem(0));}
   }function Y(a, c) {
     function d(b) {
       b = void 0 === b ? 0 : b;return a.el.getPointAtLength(1 <= c + b ? c + b : 0);
     }var b = d(),
         f = d(-1),
         n = d(1);switch (a.property) {case "x":
-        return b.x;case "y":
-        return b.y;
+      return b.x;case "y":
+      return b.y;
       case "angle":
         return 180 * Math.atan2(n.y - f.y, n.x - f.x) / Math.PI;}
   }function O(a, c) {
@@ -1761,102 +1761,102 @@ $jscomp.polyfill = function (e, r, p, m) {
       W = "translateX translateY translateZ rotate rotateX rotateY rotateZ scale scaleX scaleY scaleZ skewX skewY perspective".split(" "),
       H,
       h = { arr: function (a) {
-      return Array.isArray(a);
-    }, obj: function (a) {
-      return -1 < Object.prototype.toString.call(a).indexOf("Object");
-    },
-    pth: function (a) {
-      return h.obj(a) && a.hasOwnProperty("totalLength");
-    }, svg: function (a) {
-      return a instanceof SVGElement;
-    }, dom: function (a) {
-      return a.nodeType || h.svg(a);
-    }, str: function (a) {
-      return "string" === typeof a;
-    }, fnc: function (a) {
-      return "function" === typeof a;
-    }, und: function (a) {
-      return "undefined" === typeof a;
-    }, hex: function (a) {
-      return (/(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i.test(a)
-      );
-    }, rgb: function (a) {
-      return (/^rgb/.test(a)
-      );
-    }, hsl: function (a) {
-      return (/^hsl/.test(a)
-      );
-    }, col: function (a) {
-      return h.hex(a) || h.rgb(a) || h.hsl(a);
-    } },
+          return Array.isArray(a);
+        }, obj: function (a) {
+          return -1 < Object.prototype.toString.call(a).indexOf("Object");
+        },
+        pth: function (a) {
+          return h.obj(a) && a.hasOwnProperty("totalLength");
+        }, svg: function (a) {
+          return a instanceof SVGElement;
+        }, dom: function (a) {
+          return a.nodeType || h.svg(a);
+        }, str: function (a) {
+          return "string" === typeof a;
+        }, fnc: function (a) {
+          return "function" === typeof a;
+        }, und: function (a) {
+          return "undefined" === typeof a;
+        }, hex: function (a) {
+          return (/(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i.test(a)
+          );
+        }, rgb: function (a) {
+          return (/^rgb/.test(a)
+          );
+        }, hsl: function (a) {
+          return (/^hsl/.test(a)
+          );
+        }, col: function (a) {
+          return h.hex(a) || h.rgb(a) || h.hsl(a);
+        } },
       A = function () {
-    function a(a, d, b) {
-      return (((1 - 3 * b + 3 * d) * a + (3 * b - 6 * d)) * a + 3 * d) * a;
-    }return function (c, d, b, f) {
-      if (0 <= c && 1 >= c && 0 <= b && 1 >= b) {
-        var e = new Float32Array(11);if (c !== d || b !== f) for (var k = 0; 11 > k; ++k) {
-          e[k] = a(.1 * k, c, b);
-        }return function (k) {
-          if (c === d && b === f) return k;if (0 === k) return 0;if (1 === k) return 1;for (var h = 0, l = 1; 10 !== l && e[l] <= k; ++l) {
-            h += .1;
-          }--l;var l = h + (k - e[l]) / (e[l + 1] - e[l]) * .1,
-              n = 3 * (1 - 3 * b + 3 * c) * l * l + 2 * (3 * b - 6 * c) * l + 3 * c;if (.001 <= n) {
-            for (h = 0; 4 > h; ++h) {
-              n = 3 * (1 - 3 * b + 3 * c) * l * l + 2 * (3 * b - 6 * c) * l + 3 * c;if (0 === n) break;var m = a(l, c, b) - k,
-                  l = l - m / n;
-            }k = l;
-          } else if (0 === n) k = l;else {
-            var l = h,
-                h = h + .1,
-                g = 0;do {
-              m = l + (h - l) / 2, n = a(m, c, b) - k, 0 < n ? h = m : l = m;
-            } while (1e-7 < Math.abs(n) && 10 > ++g);k = m;
-          }return a(k, d, f);
+        function a(a, d, b) {
+          return (((1 - 3 * b + 3 * d) * a + (3 * b - 6 * d)) * a + 3 * d) * a;
+        }return function (c, d, b, f) {
+          if (0 <= c && 1 >= c && 0 <= b && 1 >= b) {
+            var e = new Float32Array(11);if (c !== d || b !== f) for (var k = 0; 11 > k; ++k) {
+              e[k] = a(.1 * k, c, b);
+            }return function (k) {
+              if (c === d && b === f) return k;if (0 === k) return 0;if (1 === k) return 1;for (var h = 0, l = 1; 10 !== l && e[l] <= k; ++l) {
+                h += .1;
+              }--l;var l = h + (k - e[l]) / (e[l + 1] - e[l]) * .1,
+                  n = 3 * (1 - 3 * b + 3 * c) * l * l + 2 * (3 * b - 6 * c) * l + 3 * c;if (.001 <= n) {
+                for (h = 0; 4 > h; ++h) {
+                  n = 3 * (1 - 3 * b + 3 * c) * l * l + 2 * (3 * b - 6 * c) * l + 3 * c;if (0 === n) break;var m = a(l, c, b) - k,
+                      l = l - m / n;
+                }k = l;
+              } else if (0 === n) k = l;else {
+                var l = h,
+                    h = h + .1,
+                    g = 0;do {
+                  m = l + (h - l) / 2, n = a(m, c, b) - k, 0 < n ? h = m : l = m;
+                } while (1e-7 < Math.abs(n) && 10 > ++g);k = m;
+              }return a(k, d, f);
+            };
+          }
         };
-      }
-    };
-  }(),
+      }(),
       Q = function () {
-    function a(a, b) {
-      return 0 === a || 1 === a ? a : -Math.pow(2, 10 * (a - 1)) * Math.sin(2 * (a - 1 - b / (2 * Math.PI) * Math.asin(1)) * Math.PI / b);
-    }var c = "Quad Cubic Quart Quint Sine Expo Circ Back Elastic".split(" "),
-        d = { In: [[.55, .085, .68, .53], [.55, .055, .675, .19], [.895, .03, .685, .22], [.755, .05, .855, .06], [.47, 0, .745, .715], [.95, .05, .795, .035], [.6, .04, .98, .335], [.6, -.28, .735, .045], a], Out: [[.25, .46, .45, .94], [.215, .61, .355, 1], [.165, .84, .44, 1], [.23, 1, .32, 1], [.39, .575, .565, 1], [.19, 1, .22, 1], [.075, .82, .165, 1], [.175, .885, .32, 1.275], function (b, c) {
-        return 1 - a(1 - b, c);
-      }], InOut: [[.455, .03, .515, .955], [.645, .045, .355, 1], [.77, 0, .175, 1], [.86, 0, .07, 1], [.445, .05, .55, .95], [1, 0, 0, 1], [.785, .135, .15, .86], [.68, -.55, .265, 1.55], function (b, c) {
-        return .5 > b ? a(2 * b, c) / 2 : 1 - a(-2 * b + 2, c) / 2;
-      }] },
-        b = { linear: A(.25, .25, .75, .75) },
-        f = {},
-        e;for (e in d) {
-      f.type = e, d[f.type].forEach(function (a) {
-        return function (d, f) {
-          b["ease" + a.type + c[f]] = h.fnc(d) ? d : A.apply($jscomp$this, d);
-        };
-      }(f)), f = { type: f.type };
-    }return b;
-  }(),
+        function a(a, b) {
+          return 0 === a || 1 === a ? a : -Math.pow(2, 10 * (a - 1)) * Math.sin(2 * (a - 1 - b / (2 * Math.PI) * Math.asin(1)) * Math.PI / b);
+        }var c = "Quad Cubic Quart Quint Sine Expo Circ Back Elastic".split(" "),
+            d = { In: [[.55, .085, .68, .53], [.55, .055, .675, .19], [.895, .03, .685, .22], [.755, .05, .855, .06], [.47, 0, .745, .715], [.95, .05, .795, .035], [.6, .04, .98, .335], [.6, -.28, .735, .045], a], Out: [[.25, .46, .45, .94], [.215, .61, .355, 1], [.165, .84, .44, 1], [.23, 1, .32, 1], [.39, .575, .565, 1], [.19, 1, .22, 1], [.075, .82, .165, 1], [.175, .885, .32, 1.275], function (b, c) {
+                return 1 - a(1 - b, c);
+              }], InOut: [[.455, .03, .515, .955], [.645, .045, .355, 1], [.77, 0, .175, 1], [.86, 0, .07, 1], [.445, .05, .55, .95], [1, 0, 0, 1], [.785, .135, .15, .86], [.68, -.55, .265, 1.55], function (b, c) {
+                return .5 > b ? a(2 * b, c) / 2 : 1 - a(-2 * b + 2, c) / 2;
+              }] },
+            b = { linear: A(.25, .25, .75, .75) },
+            f = {},
+            e;for (e in d) {
+          f.type = e, d[f.type].forEach(function (a) {
+            return function (d, f) {
+              b["ease" + a.type + c[f]] = h.fnc(d) ? d : A.apply($jscomp$this, d);
+            };
+          }(f)), f = { type: f.type };
+        }return b;
+      }(),
       ha = { css: function (a, c, d) {
-      return a.style[c] = d;
-    }, attribute: function (a, c, d) {
-      return a.setAttribute(c, d);
-    }, object: function (a, c, d) {
-      return a[c] = d;
-    }, transform: function (a, c, d, b, f) {
-      b[f] || (b[f] = []);b[f].push(c + "(" + d + ")");
-    } },
+          return a.style[c] = d;
+        }, attribute: function (a, c, d) {
+          return a.setAttribute(c, d);
+        }, object: function (a, c, d) {
+          return a[c] = d;
+        }, transform: function (a, c, d, b, f) {
+          b[f] || (b[f] = []);b[f].push(c + "(" + d + ")");
+        } },
       v = [],
       B = 0,
       ia = function () {
-    function a() {
-      B = requestAnimationFrame(c);
-    }function c(c) {
-      var b = v.length;if (b) {
-        for (var d = 0; d < b;) {
-          v[d] && v[d].tick(c), d++;
-        }a();
-      } else cancelAnimationFrame(B), B = 0;
-    }return a;
-  }();q.version = "2.2.0";q.speed = 1;q.running = v;q.remove = function (a) {
+        function a() {
+          B = requestAnimationFrame(c);
+        }function c(c) {
+          var b = v.length;if (b) {
+            for (var d = 0; d < b;) {
+              v[d] && v[d].tick(c), d++;
+            }a();
+          } else cancelAnimationFrame(B), B = 0;
+        }return a;
+      }();q.version = "2.2.0";q.speed = 1;q.running = v;q.remove = function (a) {
     a = P(a);for (var c = v.length; c--;) {
       for (var d = v[c], b = d.animations, f = b.length; f--;) {
         u(a, b[f].animatable.target) && (b.splice(f, 1), b.length || d.pause());
@@ -2518,8 +2518,8 @@ $jscomp.polyfill = function (e, r, p, m) {
 
           var string = this.filterQuery.join(''),
               newOptionEl = $(this.dropdownEl).find('li').filter(function (el) {
-            return $(el).text().toLowerCase().indexOf(string) === 0;
-          })[0];
+                return $(el).text().toLowerCase().indexOf(string) === 0;
+              })[0];
 
           if (newOptionEl) {
             this.focusedIndex = $(newOptionEl).index();
@@ -7193,11 +7193,11 @@ $jscomp.polyfill = function (e, r, p, m) {
         _this39._animateCaptionIn(el, 0);
       });
 
-      // Move img src into /static/image/background-image
+      // Move img src into background-image
       _this39.$slides.find('img').each(function (el) {
         var placeholderBase64 = 'data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';
         if ($(el).attr('src') !== placeholderBase64) {
-          $(el).css('/static/image/background-image', 'url("' + $(el).attr('src') + '")');
+          $(el).css('background-image', 'url("' + $(el).attr('src') + '")');
           $(el).attr('src', placeholderBase64);
         }
       });
@@ -8544,7 +8544,7 @@ $jscomp.polyfill = function (e, r, p, m) {
         var windowHeight = window.innerHeight;
         var btnRect = this.el.getBoundingClientRect();
         var backdrop = $('<div class="fab-backdrop"></div>');
-        var fabColor = this.$anchor.css('/static/image/background-color');
+        var fabColor = this.$anchor.css('background-color');
         this.$anchor.append(backdrop);
 
         this.offsetX = btnRect.left - windowWidth / 2 + btnRect.width / 2;
@@ -8569,13 +8569,13 @@ $jscomp.polyfill = function (e, r, p, m) {
           transition: 'none'
         });
         backdrop.css({
-          '/static/image/background-color': fabColor
+          'background-color': fabColor
         });
 
         setTimeout(function () {
           _this50.$el.css({
             transform: '',
-            transition: 'transform .2s cubic-bezier(0.550, 0.085, 0.680, 0.530), /static/image/background-color 0s linear .2s'
+            transition: 'transform .2s cubic-bezier(0.550, 0.085, 0.680, 0.530), background-color 0s linear .2s'
           });
           _this50.$anchor.css({
             overflow: 'visible',
@@ -8586,7 +8586,7 @@ $jscomp.polyfill = function (e, r, p, m) {
           setTimeout(function () {
             _this50.$el.css({
               overflow: 'hidden',
-              '/static/image/background-color': fabColor
+              'background-color': fabColor
             });
             backdrop.css({
               transform: 'scale(' + scaleFactor + ')',
@@ -8616,7 +8616,7 @@ $jscomp.polyfill = function (e, r, p, m) {
         var windowWidth = window.innerWidth;
         var windowHeight = window.innerHeight;
         var backdrop = this.$el.find('.fab-backdrop');
-        var fabColor = this.$anchor.css('/static/image/background-color');
+        var fabColor = this.$anchor.css('background-color');
 
         this.offsetX = this.btnLeft - windowWidth / 2 + this.btnWidth / 2;
         this.offsetY = windowHeight - this.btnBottom;
@@ -8624,7 +8624,7 @@ $jscomp.polyfill = function (e, r, p, m) {
         // Hide backdrop
         this.$el.removeClass('active');
         this.$el.css({
-          '/static/image/background-color': 'transparent',
+          'background-color': 'transparent',
           transition: 'none'
         });
         this.$anchor.css({
@@ -8632,7 +8632,7 @@ $jscomp.polyfill = function (e, r, p, m) {
         });
         backdrop.css({
           transform: 'scale(0)',
-          '/static/image/background-color': fabColor
+          'background-color': fabColor
         });
         this.$menu.children('li').children('a').css({
           opacity: ''
@@ -8648,7 +8648,7 @@ $jscomp.polyfill = function (e, r, p, m) {
             bottom: '',
             left: '',
             overflow: '',
-            '/static/image/background-color': '',
+            'background-color': '',
             transform: 'translate3d(' + -_this51.offsetX + 'px,0,0)'
           });
           _this51.$anchor.css({
@@ -8708,13 +8708,13 @@ $jscomp.polyfill = function (e, r, p, m) {
     autoClose: false,
 
     // the default output format for the input field value
-    format: 'mmm dd, yyyy',
+    format: 'yyyy-mm-dd',
 
     // Used to create date object from current input string
     parse: null,
 
     // The initial date to view when first opened
-    defaultDate: null,
+    defaultDate: 1995-1-1,
 
     // Make the `defaultDate` the initial selected value
     setDefaultDate: false,
@@ -8732,11 +8732,11 @@ $jscomp.polyfill = function (e, r, p, m) {
     maxDate: null,
 
     // Number of years either side, or array of upper/lower range
-    yearRange: 10,
+    yearRange: 50,
 
     // used internally (don't config outside)
-    minYear: 0,
-    maxYear: 9999,
+    minYear: 1950,
+    maxYear: 2019,
     minMonth: undefined,
     maxMonth: undefined,
 
@@ -8759,16 +8759,16 @@ $jscomp.polyfill = function (e, r, p, m) {
 
     // internationalization
     i18n: {
-      cancel: 'Cancel',
+      cancel: '取消',
       clear: 'Clear',
-      done: 'Ok',
+      done: '确定',
       previousMonth: '‹',
       nextMonth: '›',
-      months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-      monthsShort: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-      weekdays: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-      weekdaysShort: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
-      weekdaysAbbrev: ['S', 'M', 'T', 'W', 'T', 'F', 'S']
+      months: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'],
+      monthsShort: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'],
+      weekdays: ['周日', '周一', '周二', '周三', '周四', '周五', '周六'],
+      weekdaysShort: ['日', '一', '二', '三', '四', '五', '六'],
+      weekdaysAbbrev: ['日', '一', '二', '三', '四', '五', '六'],
     },
 
     // events array

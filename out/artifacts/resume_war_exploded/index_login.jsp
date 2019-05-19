@@ -66,7 +66,7 @@
                 <h5 class="header col s12 light">在这里，用一份简历开始你的故事</h5>
             </div>
             <div class="row center">
-                <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">开始创建</a>
+                <a href="<%=request.getContextPath()%>/infolist.jsp" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">开始创建</a>
             </div>
             <br><br>
 
