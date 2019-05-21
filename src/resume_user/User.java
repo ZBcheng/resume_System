@@ -24,6 +24,7 @@ public class User {
     User(String username, String password) {
         this.username = username;
         this.password = password;
+        this.info_list = new InfoList();
     }
 
 
@@ -35,6 +36,7 @@ public class User {
         return this.password;
     }
 
+
     public static void setCurUser(User cur_user) {
         User.cur_user = cur_user;
     }
@@ -42,6 +44,7 @@ public class User {
     public static User getCurUser() {
         return User.cur_user;
     }
+
 
     public static boolean isLogin() {
         if (User.cur_user == null) {

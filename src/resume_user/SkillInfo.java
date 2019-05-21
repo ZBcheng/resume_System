@@ -1,8 +1,15 @@
 package resume_user;
 
+import com.mysql.jdbc.BalanceStrategy;
+
 public class SkillInfo {
     private String language;
     private String frameworks;
+
+//    SkillInfo() {
+//        this.language = null;
+//        this.frameworks = null;
+//    }
 
     public void setLanguage(String language) {
         this.language = language;

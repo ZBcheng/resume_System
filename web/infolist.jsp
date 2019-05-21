@@ -28,7 +28,7 @@
     </div>
 </nav>
 
-    <form class="col s12" id="info_form" action="${pageContext.request.contextPath}\infolist" method="post">
+    <form class="col s12" id="info_form" action="${pageContext.request.contextPath}/infolist" method="post">
         <div id="log_card" class="login-card" style="width: 800px; margin: auto; margin-top: 100px; background: white">
             <div class="row">
                 <div class="col s12 m12">
