@@ -39,16 +39,29 @@
                             <img src="static/image/background1.jpg">
                         </div>
                         <a href="#user"><img class="circle" src="static/image/user.jpg"></a>
-                        <a href="#name"><span class="white-text name" style="padding-top: 7px;padding-bottom: 20px"><%=User.getCurUser().getUsername()%></span></a>
+                        <a href="#name"><span class="white-text name" style="padding-top: 7px;padding-bottom: 20px"><%=User.getCurUser().getUsername()%>&nbsp&nbsp&nbsp&nbsp<%=User.cur_user.info_list.personal_info.getCity()%></span></a>
                     </div>
                     </li>
                     <li><a class="subheader" href="#!"></i>基本信息</a></li>
                     <li><div class="divider"></div></li>
-                    <li><a class="waves-effect" href="#!"><i class="material-icons">face</i></a></li>
-                    <li><a class="waves-effect" href="#!"><i class="material-icons">phone</i><%=User.getCurUser().getUsername()%></a></li>
-                    <li><a class="waves-effect" href="#!"><i class="material-icons">cake</i>{{ request.user.birthday }}</a></li>
-                    <li><a class="waves-effect" href="#!"><i class="material-icons">email</i>{{ request.user.email }}</a></li>
+                    <li><a class="waves-effect" href="#!"><i class="material-icons">face</i><%=User.getCurUser().getUsername()%></a></li>
+                    <li><a class="waves-effect" href="#!"><i class="material-icons">web</i><%=User.cur_user.info_list.personal_info.getWebsite()%></a></li>
+                    <li><a class="waves-effect" href="#!"><i class="material-icons">cake</i><%=User.cur_user.info_list.personal_info.getBirthday()%></a></li>
+                    <li><a class="waves-effect" href="#!"><i class="material-icons">phone</i><%=User.cur_user.info_list.personal_info.getPhone()%></a></li>
+                    <li><a class="waves-effect" href="#!"><i class="material-icons">email</i><%=User.cur_user.info_list.personal_info.getEmail()%></a></li>
+
+                    <li><a class="subheader" href="#!"></i>教育信息</a></li>
                     <li><div class="divider"></div></li>
+                    <li><a class="waves-effect" href="#!"><i class="material-icons">school</i><%=User.cur_user.info_list.edu_info.getSchool()%></a></li>
+                    <li><a class="waves-effect" href="#!"><i class="material-icons">web</i><%=User.cur_user.info_list.edu_info.getMajor()%></a></li>
+                    <li><a class="subheader" href="#!"></i>技能信息</a></li>
+
+                    <li><div class="divider"></div></li>
+                    <li><a class="waves-effect" href="#!"><i class="material-icons">code</i><%=User.cur_user.info_list.skill_info.getLanguage()%></a></li>
+                    <li><a class="waves-effect" href="#!"><i class="material-icons">bug_report</i><%=User.cur_user.info_list.skill_info.getFrameworks()%></a></li>
+
+                    <li><div class="divider"></div></li>
+                    <li><a class="waves-effect" href="/logout/" ><i class="material-icons">edit</i>详细信息</a></li>
                     <li><a class="waves-effect" href="/logout/" style="color: #E53935"><i class="material-icons">info</i>退出登录</a></li>
 
                     <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
