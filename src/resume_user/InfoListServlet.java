@@ -39,17 +39,17 @@ public class InfoListServlet extends HttpServlet {
 
     public void setInfo(User user) {
         String user_name = User.cur_user.getUsername();
-        String name = user.info_list.personal_info.getName();
-        String gender = user.info_list.personal_info.getGender();
-        String email = user.info_list.personal_info.getEmail();
-        String phone = user.info_list.personal_info.getPhone();
-        String birthday = user.info_list.personal_info.getBirthday();
-        String city = user.info_list.personal_info.getCity();
-        String website = user.info_list.personal_info.getWebsite();
-        String school = user.info_list.edu_info.getSchool();
-        String major = user.info_list.edu_info.getMajor();
-        String language = user.info_list.skill_info.getLanguage();
-        String frameworks = user.info_list.skill_info.getFrameworks();
+        String name = user.info_list.getName();
+        String gender = user.info_list.getGender();
+        String email = user.info_list.getEmail();
+        String phone = user.info_list.getPhone();
+        String birthday = user.info_list.getBirthday();
+        String city = user.info_list.getCity();
+        String website = user.info_list.getWebsite();
+        String school = user.info_list.getSchool();
+        String major = user.info_list.getMajor();
+        String language = user.info_list.getLanguage();
+        String frameworks = user.info_list.getFrameworks();
         String award = user.info_list.getAwards();
         String introduce = user.info_list.getIntroduce();
         String others = user.info_list.getOthers();
@@ -131,17 +131,17 @@ public class InfoListServlet extends HttpServlet {
 //        System.out.println(name+gender+password+email+birthday+city+website+school+major+language+frameworks+award+introduce+others);
 //        this.setInfo(name, gender, password, email, birthday, city, website, school, major, language, frameworks, award, introduce, others);
 
-        User.cur_user.info_list.personal_info.setName(name);
-        User.cur_user.info_list.personal_info.setGender(gender);
-        User.cur_user.info_list.personal_info.setEmail(email);
-        User.cur_user.info_list.personal_info.setPhone(phone);
-        User.cur_user.info_list.personal_info.setBirthday(birthday);
-        User.cur_user.info_list.personal_info.setCity(city);
-        User.cur_user.info_list.personal_info.setWebsite(website);
-        User.cur_user.info_list.edu_info.setSchool(school);
-        User.cur_user.info_list.edu_info.setMajor(major);
-        User.cur_user.info_list.skill_info.setLanguage(language);
-        User.cur_user.info_list.skill_info.setFrameworks(frameworks);
+        User.cur_user.info_list.setName(name);
+        User.cur_user.info_list.setGender(gender);
+        User.cur_user.info_list.setEmail(email);
+        User.cur_user.info_list.setPhone(phone);
+        User.cur_user.info_list.setBirthday(birthday);
+        User.cur_user.info_list.setCity(city);
+        User.cur_user.info_list.setWebsite(website);
+        User.cur_user.info_list.setSchool(school);
+        User.cur_user.info_list.setMajor(major);
+        User.cur_user.info_list.setLanguage(language);
+        User.cur_user.info_list.setFrameworks(frameworks);
         User.cur_user.info_list.setAwards(award);
         User.cur_user.info_list.setIntroduce(introduce);
         User.cur_user.info_list.setOthers(others);
@@ -152,7 +152,4 @@ public class InfoListServlet extends HttpServlet {
         response.sendRedirect("index_login.jsp");
     }
 
-    protected void doGet(HttpServletRequest request                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         , HttpServletResponse response) throws ServletException, IOException {
-        response.sendRedirect("infolist.jsp");
-    }
 }

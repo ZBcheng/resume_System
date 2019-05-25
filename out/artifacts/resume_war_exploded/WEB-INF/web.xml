@@ -38,4 +38,13 @@
         <servlet-name>InfoListServlet</servlet-name>
         <url-pattern>/infolist</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ResumeServlet</servlet-name>
+        <servlet-class>resume_user.ResumeServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ResumeServlet</servlet-name>
+        <url-pattern>/resume</url-pattern>
+    </servlet-mapping>
 </web-app>

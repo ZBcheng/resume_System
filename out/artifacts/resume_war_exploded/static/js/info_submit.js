@@ -47,18 +47,18 @@ function info_submit() {
     // alert(introduce)
     // alert(others)
 
-    document.getElementById("info_form").submit()
+    // document.getElementById("info_form").submit()
 
 
-    // if (name == "" || gender == "" || phone == "" || email == ""|| birthday == ""|| city == ""|| website == ""|| school == ""|| major == ""|| language == ""|| frameworks == ""|| award == ""|| introduce == ""|| others== "") {
-    //     // if(name == "") {
-    //
-    //     var elem = document.getElementById('modal1')
-    //     var instances = M.Modal.init(elem)
-    //     instances.open()
-    // } else {
-    //     document.getElementById("info_form").submit()
-    // }
+    if (name == "" || gender == "" || phone == "" || email == ""|| birthday == ""|| city == ""|| website == ""|| school == ""|| major == ""|| language == ""|| frameworks == ""|| award == ""|| introduce == ""|| others== "") {
+        // if(name == "") {
+
+        var elem = document.getElementById('modal1')
+        var instances = M.Modal.init(elem)
+        instances.open()
+    } else {
+        document.getElementById("info_form").submit()
+    }
 }
 
 

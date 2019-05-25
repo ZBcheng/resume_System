@@ -17,11 +17,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="static/css/materialize.css" type="text/css" rel="stylesheet" />
+    <link href="https://font.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link href="static/css/style.css" type="text/css" rel="stylesheet" />
 </head>
 
 
-<body>
+<body style="font-family: 'Roboto', sans-serif">
     <nav class="white" role="navigation">
     <div class="nav-wrapper container">
         <a id="logo-container" href="<%=request.getContextPath()%>/index_login.jsp" class="brand-logo"><%=User.getCurUser().getUsername()%>的个人简历</a>
@@ -50,14 +51,16 @@
                                 <div class="row">
                                     <div class="input-field col s6">
                                         <i class="material-icons prefix">account_circle</i>
-                                        <input id="name" type="text" class="validate" name="name">
+                                        <input id="name" type="text" class="validate" name="name" value="<%=User.cur_user.info_list.getName()%>">
                                         <label for="name">姓名</label>
                                     </div>
 
                                     <div class="input-field col s6">
                                         <i class="material-icons prefix">person</i>
                                         <select id="gender" name="gender">
-                                            <option value="" disabled selected>性别</option>
+
+                                            <option value="" disabled selected>Choose your option</option>
+                                            <option value="<%=User.cur_user.info_list.getGender()%>" disabled selected><%=User.cur_user.info_list.getGender()%></option>
                                             <option value="男">男</option>
                                             <option value="女">女</option>
                                             <option value="其它">其它</option>
@@ -73,20 +76,20 @@
 
                                     <div class="input-field col s6">
                                         <i class="material-icons prefix">phone</i>
-                                        <input id="phone" type="tel" class="validate" name="phone">
+                                        <input id="phone" type="tel" class="validate" name="phone" value="<%=User.cur_user.info_list.getPhone()%>">
                                         <label for="phone">电话</label>
                                     </div>
 
 
                                     <div class="input-field col s6">
                                         <i class="material-icons prefix">email</i>
-                                        <input id="email" type="email" class="validate" name="email">
+                                        <input id="email" type="email" class="validate" name="email" value="<%=User.cur_user.info_list.getEmail()%>">
                                         <label for="email">邮箱</label>
                                     </div>
 
                                     <div class="input-field col s6" name="birthday">
                                         <i class="material-icons prefix">cake</i>
-                                        <input id="birthday" type="tel" class="datepicker" name="birthday">
+                                        <input id="birthday" type="tel" class="datepicker" name="birthday" value="<%=User.cur_user.info_list.getBirthday()%>">
                                         <label for="birthday">生日</label>
                                         <script>
                                             document.addEventListener('DOMContentLoaded', function() {
@@ -98,13 +101,13 @@
 
                                     <div class="input-field col s6">
                                         <i class="material-icons prefix">house</i>
-                                        <input id="city" type="text" class="validate" name="city">
+                                        <input id="city" type="text" class="validate" name="city" value="<%=User.cur_user.info_list.getCity()%>">
                                         <label for="city">城市</label>
                                     </div>
 
                                     <div class="input-field col s12">
                                         <i class="material-icons prefix">account_circle</i>
-                                        <input id="website" type="text" class="validate" name="website">
+                                        <input id="website" type="text" class="validate" name="website" value="<%=User.cur_user.info_list.getWebsite()%>">
                                         <label for="website">个人主页</label>
                                     </div>
 
@@ -116,13 +119,13 @@
                                 <div class="row">
                                     <div class="input-field col s12">
                                         <i class="material-icons prefix">school</i>
-                                        <input id="school" type="text" class="validate" name="school">
+                                        <input id="school" type="text" class="validate" name="school" value="<%=User.cur_user.info_list.getSchool()%>">
                                         <label for="school">学校</label>
                                     </div>
 
                                     <div class="input-field col s12">
                                         <i class="material-icons prefix">building</i>
-                                        <input id="major" type="text" class="validate" name="major">
+                                        <input id="major" type="text" class="validate" name="major" value="<%=User.cur_user.info_list.getMajor()%>">
                                         <label for="major">专业</label>
                                     </div>
                                 </div>
@@ -170,21 +173,22 @@
                                 <div class="row">
                                     <div class="input-field col s12">
                                         <i class="material-icons prefix">books</i>
-                                        <input id="award" type="text" class="validate" name="award">
+                                        <input id="award" type="text" class="validate" name="award" value="<%=User.cur_user.info_list.getAwards()%>">
                                         <label for="award">奖项</label>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="input-field col s12">
                                         <i class="material-icons prefix">accessibility</i>
-                                        <textarea id="introduce" class="materialize-textarea" data-length="300" name="introduce"></textarea>
+                                        <input id="introduce" type="text" class="validate" name="introduce" value="<%=User.cur_user.info_list.getIntroduce()%>">
                                         <label for="introduce">个人评价</label>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="input-field col s12">
                                         <i class="material-icons prefix">chat</i>
-                                        <textarea id="others" class="materialize-textarea" data-length="300" name="others"></textarea>
+                                        <input id="others" type="text" class="validate" name="others" value="<%=User.cur_user.info_list.getOthers()%>">
+<%--                                        <input id="others"  name="others" value="<%=User.cur_user.info_list.getOthers()%>"></input>--%>
                                         <label for="others">其它</label>
                                     </div>
                                 </div>

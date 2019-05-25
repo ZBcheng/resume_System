@@ -17,16 +17,17 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link href="static/css/materialize.css" type="text/css" rel="stylesheet" />
         <link href="static/css/style.css" type="text/css" rel="stylesheet" />
+        <link href="https://font.googleapis.com/css?family=Roboto" rel="stylesheet">
     </head>
 
 
-    <body background="static/image/login.jpg">
+    <body background="static/image/login2.jpg" style="font-family: 'Roboto', sans-serif">
 
         <div class="login-card" style="width: 600px; height: 400px; margin: auto; margin-top: 200px; background: white">
             <div class="card">
                 <h2 style="padding-left: 55px; padding-top: 55px">登录</h2>
                 <div class="row">
-                    <form class="col s12" id="log_form" action="${pageContext.request.contextPath}\login" method="post">
+                    <form class="col s12" id="log_form" action="${pageContext.request.contextPath}/login" method="post">
                         <div class="row" style="margin-left: 50px;">
                             <div class="row" style="margin-top: 10px">
                                 <div class="input-field col s10">
