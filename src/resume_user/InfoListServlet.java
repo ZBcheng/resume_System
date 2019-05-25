@@ -53,20 +53,21 @@ public class InfoListServlet extends HttpServlet {
         String award = user.info_list.getAwards();
         String introduce = user.info_list.getIntroduce();
         String others = user.info_list.getOthers();
-        System.out.println(user_name+name+gender+email+phone+birthday+city+website+school+major+language+frameworks+award+introduce+others);
+        System.out.println(user_name + name + gender + email + phone + birthday + city + website + school + major + language + frameworks + award + introduce + others);
 
-        try{
+        try {
             // 注册 JDBC 驱动
             Class.forName("com.mysql.jdbc.Driver");
             int i = 0;
             // 打开链接
             System.out.println("正在注册...");
-            conn = DriverManager.getConnection(DB_URL,USER,PASS);
+            conn = DriverManager.getConnection(DB_URL, USER, PASS);
             System.out.print("done!");
             // 执行查询
 //            stmt = conn.createStatement();
             String sql;
-            sql = "insert into list_info values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            sql = "UPDATE list_info SET name=?, gender=?, email=?, phone=?, birthday=?, city=?, website=?, school=?, major=?, language=?, frameworks=?, award=?, introduce=?, others=?"
+                    + "WHERE name = + " + "'" + user_name + "'";
             PreparedStatement stmt;
             try {
                 stmt = (PreparedStatement) conn.prepareStatement(sql);
@@ -92,20 +93,21 @@ public class InfoListServlet extends HttpServlet {
             }
             // 展开结果集数据库
 
-        }catch(SQLException se){
+        } catch (SQLException se) {
             // 处理 JDBC 错误
             se.printStackTrace();
-        }catch(Exception e){
+        } catch (Exception e) {
             // 处理 Class.forName 错误
             e.printStackTrace();
-        }finally{
+        } finally {
             // 关闭资源
-            try{
-                if(stmt!=null) stmt.close();
-            }catch(SQLException se2){ }// 什么都不做
-            try{
-                if(conn!=null) conn.close();
-            }catch(SQLException se){
+            try {
+                if (stmt != null) stmt.close();
+            } catch (SQLException se2) {
+            }// 什么都不做
+            try {
+                if (conn != null) conn.close();
+            } catch (SQLException se) {
                 se.printStackTrace();
             }
         }

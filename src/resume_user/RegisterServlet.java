@@ -40,8 +40,66 @@ public class RegisterServlet extends HttpServlet {
     }
 
 
+    public void registerUserInfo(User user) {
+        String username = user.getUsername();
+        try{
+            // 注册 JDBC 驱动
+            Class.forName("com.mysql.jdbc.Driver");
+            int i = 0;
+            // 打开链接
+            System.out.println("正在注册...");
+            conn = DriverManager.getConnection(DB_URL,USER,PASS);
+            System.out.print("done!");
+            // 执行查询
+//            stmt = conn.createStatement();
+            String sql;
+            sql = "insert into list_info values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            PreparedStatement stmt;
+            try {
+                stmt = (PreparedStatement) conn.prepareStatement(sql);
+                stmt.setString(1, username);
+                stmt.setString(2, "");
+                stmt.setString(3, "");
+                stmt.setString(4, "");
+                stmt.setString(5, "");
+                stmt.setString(6, "");
+                stmt.setString(7, "");
+                stmt.setString(8, "");
+                stmt.setString(9, "");
+                stmt.setString(10, "");
+                stmt.setString(11, "");
+                stmt.setString(12, "");
+                stmt.setString(13, "");
+                stmt.setString(14, "");
+                stmt.executeUpdate();
+                stmt.close();
+                conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            // 展开结果集数据库
 
-    public void register(User user) {
+        }catch(SQLException se){
+            // 处理 JDBC 错误
+            se.printStackTrace();
+        }catch(Exception e){
+            // 处理 Class.forName 错误
+            e.printStackTrace();
+        }finally{
+            // 关闭资源
+            try{
+                if(stmt!=null) stmt.close();
+            }catch(SQLException se2){ }// 什么都不做
+            try{
+                if(conn!=null) conn.close();
+            }catch(SQLException se){
+                se.printStackTrace();
+            }
+        }
+    }
+
+
+    public void registerUser(User user) {
 
         String username = user.getUsername();
         String password = user.getPassword();
@@ -101,8 +159,10 @@ public class RegisterServlet extends HttpServlet {
 
         if(user != null) {
             LoginServlet lg_sev = new LoginServlet();
-            this.register(user);
+            this.registerUser(user);
+            this.registerUserInfo(user);
             lg_sev.login(user);
+
         }else {
             System.out.println("用户不存在");
         }

@@ -34,10 +34,12 @@
         <div class="row">
             <div class="col s12 m12">
                 <div class="card">
+
                     <div class="card-image">
                         <img src="static/image/background3.jpg" style="height: 300px;">
                         <span class="card-title"><%=User.getCurUser().getUsername()%>的个人简历</span>
                     </div>
+
                     <div class="card-tabs">
                         <ul id="tb_card" class="tabs tabs-fixed-width">
                             <li class="tab"><a class="active" href="#test4">个人信息</a></li>
@@ -45,6 +47,7 @@
                             <li class="tab"><a href="#test6">其它</a></li>
                         </ul>
                     </div>
+
                     <div class="card-content">
                         <div id="test4">
                             <h5>基本信息</h5>

@@ -24,6 +24,9 @@ public class User {
         this.username = username;
         this.password = password;
         this.info_list = this.getInfoList();
+        if(this.info_list == null) {
+            this.info_list = new InfoList("", "", "", "", "", "", "", "", "", "", "", "", "", "");
+        }
     }
 
 

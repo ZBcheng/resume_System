@@ -226,6 +226,9 @@ public class LoginServlet extends HttpServlet {
         System.out.println(username);
         System.out.println(password);
         User user = this.getUser(username, password);
+        if(user == null) {
+            System.out.println("user is null");
+        }
         user.info_list = this.getInfoList(user);
         System.out.println("用户名:" + user.getUsername());
         System.out.println("密码:" + user.getPassword());
