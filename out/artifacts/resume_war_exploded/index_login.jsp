@@ -18,7 +18,6 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     <link href="static/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-    <link href="https://font.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 
 <body style="font-family: Roboto, sans-serif">
@@ -63,7 +62,7 @@
 
                     <li><div class="divider"></div></li>
                     <li><a class="waves-effect" href="<%=request.getContextPath()%>/infolist.jsp" ><i class="material-icons">edit</i>详细信息</a></li>
-                    <li><a class="waves-effect" href="/logout/" style="color: #E53935"><i class="material-icons">info</i>退出登录</a></li>
+                    <li><a class="waves-effect" onclick="logout()" style="color: #E53935"><i class="material-icons">info</i>退出登录</a></li>
 
                     <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 </ul>
@@ -80,7 +79,7 @@
                 <h5 class="header col s12 light"><strong>在这里，用一份简历开始你的故事</strong></h5>
             </div>
             <div class="row center">
-                <a href="<%=request.getContextPath()%>/infolist.jsp" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">开始创建</a>
+                <a href="<%=request.getContextPath()%>/infolist.jsp" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">创建&修改</a>
             </div>
             <br><br>
 

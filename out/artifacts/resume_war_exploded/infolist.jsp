@@ -17,12 +17,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="static/css/materialize.css" type="text/css" rel="stylesheet" />
-    <link href="https://font.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link href="static/css/style.css" type="text/css" rel="stylesheet" />
 </head>
 
 
-<body style="font-family: 'Roboto', sans-serif">
+<body style="font-family: 'Roboto', sans-serif" background="static/image/bak3.png">
     <nav class="white" role="navigation">
     <div class="nav-wrapper container">
         <a id="logo-container" href="<%=request.getContextPath()%>/index_login.jsp" class="brand-logo"><%=User.getCurUser().getUsername()%>的个人简历</a>
@@ -30,7 +29,8 @@
 </nav>
 
     <form class="col s12" id="info_form" action="${pageContext.request.contextPath}/infolist" method="post">
-        <div id="log_card" class="login-card" style="width: 800px; margin: auto; margin-top: 100px; background: white">
+        <input type="hidden" id="username" value="<%=User.getCurUser().getUsername()%>">
+        <div id="log_card" class="login-card" style="width: 800px; margin: auto; margin-top: 100px;">
             <div class="row">
                 <div class="col s12 m12">
                     <div class="card">
@@ -59,8 +59,6 @@
                                         <i class="material-icons prefix">person</i>
                                         <select id="gender" name="gender">
 
-                                            <option value="" disabled selected>Choose your option</option>
-                                            <option value="<%=User.cur_user.info_list.getGender()%>" disabled selected><%=User.cur_user.info_list.getGender()%></option>
                                             <option value="男">男</option>
                                             <option value="女">女</option>
                                             <option value="其它">其它</option>
@@ -133,13 +131,11 @@
                                 <div class="row">
                                     <div class="input-field col s12">
                                         <i class="material-icons prefix">code</i>
-                                        <select multiple id="language" name="language">
+                                        <select id="language" name="language">
                                             <option value="Python">Python</option>
                                             <option value="Java">Java</option>
                                             <option value="Swift">Swift</option>
                                             <option value="Go">Go</option>
-                                            <option value="Go">JavaScript</option>
-                                            <option value="Go">Ruby</option>
                                         </select>
                                         <label>编程语言</label>
                                         <script>
@@ -152,7 +148,7 @@
 
                                     <div class="input-field col s12">
                                         <i class="material-icons prefix">bug_report</i>
-                                        <select multiple id="frameworks" name="frameworks">
+                                        <select id="frameworks" name="frameworks">
                                             <option value="Django">Django</option>
                                             <option value="Flask">Flask</option>
                                             <option value="React">React</option>
@@ -214,6 +210,16 @@
         <div class="modal-content">
             <h4>请检查信息</h4>
             <p>您有信息未填写，请返回继续填写</p>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">是</a>
+        </div>
+    </div>
+
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <h4>请检查信息</h4>
+            <p>姓名信息有误</p>
         </div>
         <div class="modal-footer">
             <a href="#!" class="modal-close waves-effect waves-green btn-flat">是</a>

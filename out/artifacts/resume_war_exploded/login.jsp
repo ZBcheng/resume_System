@@ -17,12 +17,10 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link href="static/css/materialize.css" type="text/css" rel="stylesheet" />
         <link href="static/css/style.css" type="text/css" rel="stylesheet" />
-        <link href="https://font.googleapis.com/css?family=Roboto" rel="stylesheet">
     </head>
 
 
     <body background="static/image/login2.jpg" style="font-family: 'Roboto', sans-serif">
-
         <div class="login-card" style="width: 600px; height: 400px; margin: auto; margin-top: 200px; background: white">
             <div class="card">
                 <h2 style="padding-left: 55px; padding-top: 55px">登录</h2>
@@ -50,7 +48,7 @@
                                 <div id="modal1" class="modal" style="margin-top: 130px">
                                     <div class="modal-content">
                                         <h4>信息错误</h4>
-                                        <p>请输入用户名</p>
+                                        <p>用户名或密码不能为空</p>
                                     </div>
                                     <div class="modal-footer" style="padding-right: 25px">
                                         <a href="#!" class="modal-close waves-effect waves-light btn">确定</a>

@@ -17,7 +17,6 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="static/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,500,700,400italic|Material+Icons">
 </head>
 
 <body style="font-family: 'Roboto', sans-serif">
@@ -27,7 +26,6 @@
         <ul class="right hide-on-med-and-down">
             <li><a href="<%=request.getContextPath()%>/login.jsp">登录</a></li>
             <li><a href="<%=request.getContextPath()%>/register.jsp">注册</a></li>
-            <li><a href="/adminlogin/">管理</a></li>
         </ul>
 
         </div>

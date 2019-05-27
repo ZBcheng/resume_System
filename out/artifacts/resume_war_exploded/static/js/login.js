@@ -1,11 +1,11 @@
 function login() {
-    var elem = document.getElementById('modal1')
     var username = document.getElementById("username").value
     var password = document.getElementById("password").value
-    if(username == "") {
+    if(username == "" || password == "") {
         var elem = document.getElementById('modal1')
         var instances = M.Modal.init(elem)
-    } else {
+        instances.open()
+    }else {
         document.getElementById("log_form").submit()
     }
 }

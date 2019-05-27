@@ -1,22 +1,7 @@
-function getLanguage() {
-    var elems = document.getElementById('language');
-    var instance = M.FormSelect.getInstance(elems);
-    var language = instance.getSelectedValues();
-    return language.join(" ")
-}
-
-function getFrameWorks() {
-    var elems = document.getElementById('frameworks');
-    var instance = M.FormSelect.getInstance(elems);
-    var frameworks = instance.getSelectedValues();
-    return frameworks.join(" ")
-}
-
-
 
 
 function info_submit() {
-
+    var user_name = document.getElementById("username").value
     var name = document.getElementById("name").value
     var gender = document.getElementById("gender").value
     var phone = document.getElementById("phone").value
@@ -26,8 +11,8 @@ function info_submit() {
     var website = document.getElementById("website").value
     var school = document.getElementById("school").value
     var major = document.getElementById("major").value
-    var language = getLanguage();
-    var frameworks = getFrameWorks();
+    var language = document.getElementById("language").value
+    var frameworks = document.getElementById("frameworks").value
     var award = document.getElementById("award").value
     var introduce = document.getElementById("introduce").value
     var others = document.getElementById("others").value
@@ -54,6 +39,10 @@ function info_submit() {
         // if(name == "") {
 
         var elem = document.getElementById('modal1')
+        var instances = M.Modal.init(elem)
+        instances.open()
+    } else if(name != user_name) {
+        var elem = document.getElementById('modal2')
         var instances = M.Modal.init(elem)
         instances.open()
     } else {

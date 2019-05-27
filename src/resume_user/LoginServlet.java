@@ -218,6 +218,9 @@ public class LoginServlet extends HttpServlet {
 
     }
 
+    public String getErrorMessage(String message) {
+        return message;
+    }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
@@ -226,19 +229,21 @@ public class LoginServlet extends HttpServlet {
         System.out.println(username);
         System.out.println(password);
         User user = this.getUser(username, password);
-        if(user == null) {
-            System.out.println("user is null");
-        }
-        user.info_list = this.getInfoList(user);
-        System.out.println("用户名:" + user.getUsername());
-        System.out.println("密码:" + user.getPassword());
         if(user != null) {
-            this.login(user);
+            user.info_list = this.getInfoList(user);
+            System.out.println("用户名:" + user.getUsername());
+            System.out.println("密码:" + user.getPassword());
+            if(user != null) {
+                this.login(user);
+            }else {
+                System.out.println("用户不存在");
+            }
+            System.out.println(User.cur_user);
+            response.sendRedirect("index_login.jsp");
         }else {
-            System.out.println("用户不存在");
+            response.sendRedirect("login.jsp");
         }
-        System.out.println(User.cur_user);
-        response.sendRedirect("index_login.jsp");
+
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
